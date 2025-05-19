@@ -1,0 +1,181 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', 'Poppins', sans-serif;
+    color: #fff;
+}
+
+:root{
+    --dark-green: #2E5E4E;
+    --green: #7BA982;
+    --light-green: #d7e9da;
+
+    --terracotta: #C97D4D;
+    --petrol-blue: #3A6B7E;
+
+    --light-white: #F4F4F4;
+    --dark-gray: #3D3D3D;
+
+    --mostard: #FFD166;
+    --coral-red: #E63946;
+}
+
+body{
+    max-width: 100vw;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.color-gray{
+    color: var(--dark-gray);
+}
+.color-black{
+    color: #000;
+}
+
+/* From Uiverse.io by adamgiebl */ 
+.card {
+  width: 220px;
+  height: 220px;
+  border-radius: 32px;
+  background: #e0e0e0;
+  box-shadow: 12px 12px 30px rgba(68, 68, 68, 0.5);
+}
+.card span{
+      color: #000;
+}
+
+header a{
+    color: #fff;
+    text-decoration: none;
+}
+
+header>div{
+    background-color: rgba(46, 94, 78, 0.5);
+    border-radius: 50px;
+    height: 70px;
+    font-size: 24px;
+}
+
+header div img{
+    width: 100px;
+}
+
+.btn-entrar{
+    background-color: var(--dark-green);
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    height: 70px;
+    width: 100%;
+    transition: .3s;
+}
+.btn-entrar:hover{
+    background-color: var(--green);
+}
+
+header .link{
+    border-radius: 1rem;
+    transition: .3s;
+}
+
+header .link:hover{
+    background-color: var(--dark-green);
+}
+
+#h-hero{
+    height: 700px;
+    background-image: url('/assets/img/hero.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#apresentacao{
+    background-color: var(--light-green);
+    padding: 10rem 16rem 2rem 16rem;
+}
+
+#apresentacao span, #apresentacao p, input[type="radio"]{
+    color: var(--dark-gray);
+}
+#apresentacao h3{
+    color: #000;
+}
+
+#statistics-cards .card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+/* Login page */
+
+#auth{
+    background-color: var(--light-green);
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
+.login-form{
+    background-color: var(--light-white);
+    border-radius: 1rem;
+    padding: 4rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: max-content;
+    height: calc(100vh - 2rem * 2);
+    margin: 1.2rem;
+    width: calc(100% - 2rem * 2);
+}
+
+.input-box{
+    margin-bottom: 1rem;
+    position: relative;
+    
+}
+.input-box input{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0.7rem;
+    border: 1px solid var(--dark-gray);
+    background-color: var(--light-white);
+    color: var(--dark-gray);
+}
+.input-box input:focus,
+.input-box input:hover{
+    border-color: var(--green);
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: var(--dark-gray);
+    transition: .3s;
+}
+
+.input-box input:focus + label,
+.input-box input:hover + label,
+.input-box input:not(:placeholder-shown) + label{
+    margin-top: -1.2rem;
+    left: 1rem;
+    font-size: 0.8rem;
+    color: var(--green);
+    background-color: var(--light-white);
+    padding: 0 0.5rem;
+}
+
+.cachoeira{
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Caminhos_da_Serra_do_Japi.JPG/1024px-Caminhos_da_Serra_do_Japi.JPG');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 800px;
+}
