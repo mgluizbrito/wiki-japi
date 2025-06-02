@@ -30,6 +30,9 @@ ul{
     margin: 0;
     padding: 0;
 }
+.cursor-pointer{
+    cursor: pointer;
+}
 
 .color-gray{
     color: var(--dark-gray);
@@ -55,14 +58,14 @@ header a{
     text-decoration: none;
 }
 
-header>div{
+.home-header>div{
     background-color: rgba(46, 94, 78, 0.5);
     border-radius: 50px;
     height: 70px;
     font-size: 24px;
 }
 
-header div img{
+.home-header div img{
     width: 100px;
 }
 
@@ -79,12 +82,12 @@ header div img{
     background-color: var(--green);
 }
 
-header .link{
+.link{
     border-radius: 1rem;
     transition: .3s;
 }
 
-header .link:hover{
+.link:hover{
     background-color: var(--dark-green);
 }
 
@@ -179,3 +182,119 @@ header .link:hover{
     height: 100vh;
     width: 800px;
 }
+
+#posts{
+    background-color: var(--light-green);
+    min-height: calc(100vh - 80px);
+}
+
+/* From Uiverse.io by alexruix */ 
+.observation {
+    max-width: 400px;
+    padding: .8em;
+    background: #f5f5f5;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: .3s;
+}
+
+.obs-img {
+    width: 100%;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+.obs-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+}
+
+/*Text*/
+.text-title {
+    font-weight: 900;
+    font-size: 1.2em;
+}
+
+.text-body {
+    font-size: .9em;
+    padding-bottom: 10px;
+}
+
+.popular-name{
+    display: inline-block;
+    color: var(--dark-green);
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.obs-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--dark-green);
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+/*Hover*/
+
+.observation:hover .obs-button {
+    transform: translate(-50%, 60%);
+    opacity: 1;
+}
+
+.obs-img img:hover {
+    transform: scale(1.10);
+}
+
+
+.obs-button:hover {
+    background-color: var(--green);
+}
+
+#publicar-achado{
+    background-color: var(--light-white);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: max-content;
+    height: calc(100vh - 2rem * 2);
+    margin: 1.2rem;
+    width: calc(100% - 2rem * 2);
+    opacity: 0;
+    transition: .3s;
+}
+
+#publicar-achado.active{
+    animation: slideUp 0.5s forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        margin-top: 10rem;
+    }
+    to{
+        opacity: 1;
+        top: 0;
+    }
+}
+
+#obs-map {
+    border-radius: 8px;
+    border: 1px solid var(--dark-green);
+}
+
+#observation_form{
+    background-color: var(--light-green);
+    border-radius: 12px;
+}   

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId('user_id')->references('id')->on('users');
             $table->string('photo_url')->nullable();
+            $table->tinyText(('desc'))->nullable();
             $table->datetime('datetime');
             $table->decimal('latitude', 10, 8);
             $table->decimal('longitude', 11, 8);

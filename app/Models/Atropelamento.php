@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Atropelamento extends Model
 {
+    protected $table = "atropelamentos";
     protected $fillable = [
         'photo',
         'datetime',

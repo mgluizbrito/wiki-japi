@@ -1,3 +1,8 @@
+@if(auth()->check())
+    <script>
+        window.location.href = "{{ route('portal') }}";
+    </script>
+@endif
 <x-html>
 
     <x-header/>

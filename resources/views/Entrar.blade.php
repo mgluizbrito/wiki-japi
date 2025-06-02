@@ -1,4 +1,4 @@
-<x-html>
+<x-html title="Entrar | WikiJapi">
 
     <section id="auth" class="d-flex justify-content-between align-items-center">
         <div class="d-flex justify-content-center align-items-center flex-column w-100 h-100">
@@ -10,46 +10,9 @@
                     </a>
                 </div>
     
-                <form method="GET" action="/" class="w-50" id="login-form">
-                    <x-form.inputbox type="email" name="email" id="lg-email" label="Email"/>
-                    <x-form.inputbox type="password" name="password" id="lg-password" label="Senha"/>
-    
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="remember-me">
-                            <input type="checkbox" id="remember-me" name="remember-me">
-                            <label for="remember-me" class="color-gray">Lembrar de mim</label>
-                        </div>
-                        <a href="#" class="forgot-password color-gray">Esqueci minha senha</a>
-                    </div>
-                    <div class="d-flex justify-content-center align-items-center gap-3 flex-column">
-                        <button class="btn btn-secondary">Entrar</button>
-                        <a id="sign-up" class="color-black">Ainda não possui uma conta? Cadastre-se</a>
-                    </div>
-                </form>
+                <x-login/>
                 
-                <form method="GET" action="/" class="w-50 d-none" id="sign-up-form">
-                    <x-form.inputbox type="text" name="name" id="sg-name" label="Nome:"/>
-                    <x-form.inputbox type="email" name="email" id="sg-email" label="Email"/>
-                    <x-form.inputbox type="password" name="password" id="sg-password" label="Senha"/>
-                    <x-form.inputbox type="password" name="confirm-password" id="sg-confirm-password" label="Confirme sua senha:"/>
-                    <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
-                        <label class="color-gray">
-                            <input type="radio" name="role" value="user"> Usuário
-                        </label>
-                        <label class="color-gray">
-                            <input type="radio" name="role" id="specialist-role" value="specialist"> Especialista
-                        </label>
-                    </div>
-                    
-                    <div id="specialist-inputs" class="d-none">
-                        <x-form.inputbox type="url" name="lattes" id="lattes" label="Link Currículo Lattes"/>
-                        <x-form.inputbox type="text" name="area" id="area" label="Área de Atuação:"/>
-                    </div>
-                    <div class="d-flex justify-content-center align-items-center gap-3 flex-column">
-                        <button class="btn btn-secondary">Entrar</button>
-                        <a id="login" class="color-black">Já possui conta? Entre Aqui</a>
-                    </div>
-                </form> 
+                <x-sign-up/>
             </div>
 
         </div>
@@ -60,4 +23,36 @@
         </div>
 
     </section>
+
+    <script>
+        /* Auth Page */
+        const loginForm = document.querySelector("#login-form");
+        const signUpForm = document.querySelector("#sign-up-form");
+        const loginBtn = document.querySelector("#login");
+        const signUpBtn = document.querySelector("#sign-up");
+        const specialistInputs = document.querySelector("#specialist-inputs");
+        const roleRadioInputs = document.querySelectorAll("input[name='role']");
+
+        signUpBtn.addEventListener("click", function (e){
+            e.preventDefault();
+            loginForm.classList.toggle("d-none");
+            signUpForm.classList.toggle("d-none");
+        });
+
+        loginBtn.addEventListener("click", function (e){
+            e.preventDefault();
+            loginForm.classList.toggle("d-none");
+            signUpForm.classList.toggle("d-none");
+        });
+
+        roleRadioInputs.forEach((input) => {
+            input.addEventListener("change", function () {
+                if (this.value === "specialist") {
+                    specialistInputs.classList.remove("d-none");
+                } else {
+                    specialistInputs.classList.add("d-none");
+                }
+            });
+        });
+    </script>
 </x-html>

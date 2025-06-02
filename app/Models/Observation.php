@@ -17,7 +17,8 @@ class Observation extends Model
     protected $fillable = [
         'user_id',
         'photo_url',
-        'date',
+        'desc',
+        'datetime',
         'latitude',
         'longitude',
     ];

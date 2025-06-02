@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use \Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Species extends Model
+class Specie extends Model
 {
     protected $table = "species";
     protected $fillable = [
-        'scientific_name',
+        'sci_name',
         'common_name',
         'description',
         'photo_url',

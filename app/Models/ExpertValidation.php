@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ExpertValidation extends Model
 {
+    protected $table = "expert_validations";
     protected $fillable = [
         'identification_id',
         'specialist_id',
