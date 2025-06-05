@@ -277,6 +277,9 @@ header a{
 #publicar-achado.active{
     animation: slideUp 0.5s forwards;
 }
+#publicar-achado.desactive{
+    animation: slideDown 0.5s forwards;
+}
 
 @keyframes slideUp {
     from {
@@ -286,6 +289,16 @@ header a{
     to{
         opacity: 1;
         top: 0;
+    }
+}
+@keyframes slideDown {
+    from {
+        opacity: 1;
+        top: 0;
+    }
+    to{
+        opacity: 0;
+        margin-top: 10rem;
     }
 }
 
@@ -298,3 +311,20 @@ header a{
     background-color: var(--light-green);
     border-radius: 12px;
 }   
+
+#observation{
+    margin-top: 80px;
+    padding-top: 2rem;
+    background-color: var(--light-green);
+    min-height: calc(100vh - 80px);
+}
+
+.obs-foto{
+    background-color: #fff;
+    height: min-content;
+    padding: 1rem;
+}
+
+.obs-foto img{
+    border-radius: 12px;
+}

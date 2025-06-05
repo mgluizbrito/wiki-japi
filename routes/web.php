@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IdentificationController;
 use App\Http\Controllers\ObservationController;
 use App\Http\Controllers\PortalController;
 use App\Http\Middleware\Authenticate;
@@ -28,7 +29,9 @@ Route::middleware([Authenticate::class])->group(function () {
     Route::get('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
     
     Route::get('/portal', [PortalController::class, 'index'])->name('portal');
-    Route::post('/observacao', [ObservationController::class, 'store'])->name('observacao.store');
     
-    Route::get('/obs/{id}', [ObservationController::class, 'show'])->name('observacao.show');
+    Route::post('/observacao', [ObservationController::class, 'store'])->name('observacao.store');
+    Route::get('/observacao/{id}', [ObservationController::class, 'show'])->name('observacao.show');
+
+    Route::post('/identificacao', [IdentificationController::class, 'store'])->name('identificar');
 });

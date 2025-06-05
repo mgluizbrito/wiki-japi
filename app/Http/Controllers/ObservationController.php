@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CommunityIdentification;
 use App\Models\Observation;
+use DB;
 use Illuminate\Http\Request;
 use Str;
 
@@ -47,7 +49,18 @@ class ObservationController extends Controller
      */
     public function show(Request $request)
     {
+        $obs = Observation::findOrFail($request->id);
         
+        if (CommunityIdentification::where('observation_id', $obs['id'])->exists()){
+
+            return view('Observation', [
+                'obs' => $obs,
+                'iden' => CommunityIdentification::where('observation_id', $obs['id'])->orderBy("created_at", "desc")->first(),
+            ]);
+        }
+        return view('Observation', [
+            'obs' => $obs,
+        ]);
     }
 
     /**

@@ -17,7 +17,8 @@ return new class extends Migration
 
             $table->foreignId('observation_id')->references('id')->on('observations');
             $table->foreignId('user_id')->references('id')->on('users');
-            $table->foreignId('specie_id')->references('id')->on('species');
+            $table->string('scientific_name');
+            $table->string('common_name')->nullable();
         });
     }
 

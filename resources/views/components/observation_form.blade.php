@@ -34,7 +34,7 @@
 
         <button type="submit" class="btn btn-secondary">Publicar</button>
     </form>
-</section>
+</section>  
 
 <script>
     var map = L.map('obs-map', {
@@ -72,11 +72,13 @@
     document.querySelector('#publicar-achado-btn').addEventListener('click', function(e) {
         e.preventDefault();
         document.getElementById('publicar-achado').classList.add('active');
+        document.getElementById('publicar-achado').classList.remove('desactive');
     });
-
+    
     document.querySelector("#close-publicar-achado-btn").addEventListener('click', (e) => {
-        e.  ();
+        e.preventDefault();
         document.getElementById('publicar-achado').classList.remove('active');
+        document.getElementById('publicar-achado').classList.add('desactive');
     })
 
     // Define o atributo 'max' do campo de data para a data atual

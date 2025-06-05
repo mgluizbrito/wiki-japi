@@ -30,4 +30,8 @@ class Observation extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function ident(){
+        return $this->hasOne(CommunityIdentification::class)->ofMany("created_at", "max");
+    }
 }

@@ -16,6 +16,9 @@
                     'desc' => $obs->desc,
                     'datetime' => $obs->datetime,
                     'name' => $obs->user->name,
+
+                    'sci_name' => $obs->ident->scientific_name ?? null,
+                    'com_name' => $obs->ident->common_name ?? null,
                 ]" />
             @endforeach
         </div>
@@ -25,7 +28,7 @@
         document.querySelectorAll('.observation').forEach((element) => {       
             element.querySelector(".obs-button").addEventListener("click", (event) => {
                 event.preventDefault();
-                window.location.href = window.location.origin +"/obs/"+ element.querySelector("#card-id").innerHTML;
+                window.location.href = window.location.origin +"/observacao/"+ element.querySelector("#card-id").innerHTML;
             })
         })  
     </script>

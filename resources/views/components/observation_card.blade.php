@@ -5,8 +5,8 @@
     </div>
 
     <div class="obs-info">
-        <p class="text-title color-black m-0">{{$sciName ?? "Não Identificado"}}</p>
-        <span class="popular-name">{{$comName ?? "Não Identificado"}}</span>
+        <p class="text-title color-black m-0">{{$data['sci_name'] ?? "Não Identificado"}}</p>
+        <span class="popular-name">{{$data['com_name'] ?? "Não Identificado"}}</span>
         <p class="text-body">{{$data['desc']}}</p>
     </div>
 

@@ -10,7 +10,8 @@ class CommunityIdentification extends Model
     protected $fillable = [
         'observation_id',
         'user_id',
-        'specie_id',
+        'scientific_name',
+        'common_name'
     ];
 
     public function observation()
@@ -21,10 +22,5 @@ class CommunityIdentification extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function specie()
-    {
-        return $this->belongsTo(Specie::class);
     }
 }
