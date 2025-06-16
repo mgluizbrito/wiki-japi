@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CommunityIdentification;
 use App\Models\Observation;
+use Auth;
 use DB;
 use Illuminate\Http\Request;
 use Str;
@@ -15,7 +16,7 @@ class ObservationController extends Controller
     {
         $observations = Observation::where('user_id', auth()->user()->id)
             ->orderBy('created_at', 'desc')
-            ->paginate(10);
+            ->get();
 
             //dd($observations);
         return view('myObservations', [
@@ -70,12 +71,15 @@ class ObservationController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function myIdentifications(Request $request)
     {
-        //
+        $identifications = CommunityIdentification::where('user_id', auth()->user()->id)
+            ->orderBy('created_at', 'desc')
+            ->get();
+            
+        return view('MyIdentifications', [
+            'observations' => $identifications,
+        ]);
     }
 
     /**

@@ -45,4 +45,5 @@ Route::middleware([Authenticate::class])->group(function () {
     Route::post('/identificacao', [IdentificationController::class, 'store'])->name('identificar');
 
     Route::get('/my-observacoes', [ObservationController::class, 'myObservations'])->name('my.observacoes');
+    Route::get('/my-identificacoes', [ObservationController::class, 'myIdentifications'])->name('my.identificacoes');
 });

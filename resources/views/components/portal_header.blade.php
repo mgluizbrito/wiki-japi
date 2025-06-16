@@ -18,8 +18,9 @@
         </div>
 
         <div class="dropdown-itens d-none flex-column position-absolute" style="right: 0">
+            <a href="{{route('portal')}}">Início</a>
             <a href="{{route("my.observacoes")}}">Minhas Observações</a>
-            <a href="">Minhas Identificações</a>
+            <a href="{{route('my.identificacoes')}}">Minhas Identificações</a>
             <a href="{{route("auth.logout")}}">Sair</a>
         </div>
     </div>

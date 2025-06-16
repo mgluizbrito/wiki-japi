@@ -187,6 +187,11 @@ header a{
 #posts{
     background-color: var(--light-green);
     min-height: calc(100vh - 80px);
+    height: 100%;
+}
+
+.observations{
+    justify-content: center;
 }
 
 /* From Uiverse.io by alexruix */ 
