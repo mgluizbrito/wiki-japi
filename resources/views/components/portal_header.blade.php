@@ -8,15 +8,27 @@
     <div class="modal-links">
         <ul class="d-flex justify-content-between align-items-center" style="font-size: 24px;">
             <li id="publicar-achado-btn" class="cursor-pointer h-100 p-4">Publicar Observação 📷</a></li>
-            <li id="denuncia-btn" class="cursor-pointer h-100 p-4">Denúncia de Atropelameno 🚨</a></li>
+            <li id="denuncia-btn" class="cursor-pointer h-100 p-4">Denúncia de Atropelamento 🚨</a></li>
         </ul>
     </div>
 
     <div class="user-dropdown">
-        <div class="dropdown-btn" style="width: 2.5rem; height: 2.5rem;">
+        <div id="dropdown-btn" style="width: 2.5rem; height: 2.5rem; cursor: pointer;">
             <img class="w-100" src="{{asset('/assets/icon/apps_24dp_FFFFFF.svg')}}">
         </div>
 
-        <div class="dropdown d-none"></div>
+        <div class="dropdown-itens d-none flex-column position-absolute" style="right: 0">
+            <a href="{{route("my.observacoes")}}">Minhas Observações</a>
+            <a href="">Minhas Identificações</a>
+            <a href="{{route("auth.logout")}}">Sair</a>
+        </div>
     </div>
+
+    <script>
+        document.querySelector("#dropdown-btn").addEventListener('click', (event) => {
+            event.preventDefault();
+            document.querySelector(".dropdown-itens").classList.toggle("d-flex");
+            document.querySelector(".dropdown-itens").classList.toggle("d-none");
+        });
+    </script>
 </header>

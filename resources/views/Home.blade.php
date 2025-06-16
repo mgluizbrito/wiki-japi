@@ -24,15 +24,15 @@
         <div class="w-100 position-absolute d-flex justify-content-center align-items-center gap-4">
 
             <div class="card">
-                <span>12</span>
+                <span>{{$colaborators}}</span>
                 <span>Colaboradores</span>
             </div>
             <div class="card">
-                <span>87</span>
+                <span>{{$posts}}</span>
                 <span>Registros</span>
             </div>
             <div class="card">
-                <span>7</span>
+                <span>{{$species}}</span>
                 <span>Espécies</span>
             </div>
 

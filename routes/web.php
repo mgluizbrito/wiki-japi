@@ -4,11 +4,18 @@ use App\Http\Controllers\IdentificationController;
 use App\Http\Controllers\ObservationController;
 use App\Http\Controllers\PortalController;
 use App\Http\Middleware\Authenticate;
+use App\Models\User;
+use App\Models\CommunityIdentification;
+use App\Models\Observation;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
-    return view('Home');
+    return view('Home', [
+        'colaborators' => User::count(),
+        'posts' => Observation::count(),
+        'species' => CommunityIdentification::count(),
+    ]);
 })->name('home');
 
 Route::get('/explorar', function (){
@@ -30,8 +37,12 @@ Route::middleware([Authenticate::class])->group(function () {
     
     Route::get('/portal', [PortalController::class, 'index'])->name('portal');
     
-    Route::post('/observacao', [ObservationController::class, 'store'])->name('observacao.store');
     Route::get('/observacao/{id}', [ObservationController::class, 'show'])->name('observacao.show');
+    Route::post('/observacao', [ObservationController::class, 'store'])->name('observacao.store');
+    Route::post('/observacao/editar', [ObservationController::class, 'update'])->name('observacao.update');
+    Route::delete('/observacao/{id}', [ObservationController::class, 'destroy'])->name('observacao.destroy');
 
     Route::post('/identificacao', [IdentificationController::class, 'store'])->name('identificar');
+
+    Route::get('/my-observacoes', [ObservationController::class, 'myObservations'])->name('my.observacoes');
 });

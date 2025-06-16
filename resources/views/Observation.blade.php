@@ -3,14 +3,27 @@
 
     <section id="observation" class="container-fluid">
         <div class="d-flex flex-wrap justify-content-center gap-5">
-            <div class="obs-foto">
-                <img src="/storage/{{$obs['photo_url']}}" alt="">
-
-                <div class="d-none flex-column mt-4">
-                    <span class="color-gray">Postagem por </span>
-                    <span class="color-gray">Identificado por </span>
-                    <span class="color-gray">Validado por </span>
+            <div>
+                <div class="obs-foto">
+                    <img src="/storage/{{$obs['photo_url']}}" alt="" style="max-width: 100%">
+    
+                    <div class="d-none flex-column mt-4">
+                        <span class="color-gray">Postagem por </span>
+                        <span class="color-gray">Identificado por </span>
+                        <span class="color-gray">Validado por </span>
+                    </div>
+                    
                 </div>
+                
+                @if ($user['id'] == Auth::user()->id)
+                <div class="obs-actions flex-column gap-2 mt-4 p-3">
+                    <span>Essa observação te pertence!!</span>
+                    <div class="d-flex gap-4">
+                        <a id="editar-achado-btn" href="" class="editar-btn">Editar Observação</a>
+                        <a href="" class="delete-btn">Excluir Observação</a>
+                    </div>
+                </div>
+                @endif
             </div>
             <div class="obs-infos">
                 
@@ -48,7 +61,7 @@
                 </div>
 
                 <!-- Mapa Container -->
-                <div id="obsed-map" style="height: 400px;" class=" w-100 mt-3 mb-3"></div>
+                <div id="obsed-map" style="height: 400px;" class=" w-100 mt-3 mb-3 z-0"></div>
                 <input type="hidden" name="latitude" id="obs-latitude">
                 <input type="hidden" name="longitude" id="obs-longitude">
 
@@ -85,6 +98,13 @@
     }).addTo(obsMap);
     </script>
     
+    <x-edit_observation_form
+        id="{{$obs['id']}}"
+        datetime="{{$obs['datetime']}}"
+        desc="{{$obs['desc']}}"
+        lat="{{$obs['latitude']}}"
+        long="{{$obs['longitude']}}"
+        />
     <x-observation_form />
     <x-denuncia_form />
 </x-html>
