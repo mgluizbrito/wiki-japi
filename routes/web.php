@@ -40,7 +40,7 @@ Route::middleware([Authenticate::class])->group(function () {
     Route::get('/observacao/{id}', [ObservationController::class, 'show'])->name('observacao.show');
     Route::post('/observacao', [ObservationController::class, 'store'])->name('observacao.store');
     Route::post('/observacao/editar', [ObservationController::class, 'update'])->name('observacao.update');
-    Route::delete('/observacao/{id}', [ObservationController::class, 'destroy'])->name('observacao.destroy');
+    Route::get('/observacao/deletar/{id}', [ObservationController::class, 'destroy'])->name('observacao.destroy');
 
     Route::post('/identificacao', [IdentificationController::class, 'store'])->name('identificar');
 

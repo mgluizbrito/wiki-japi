@@ -19,8 +19,8 @@
                 <div class="obs-actions flex-column gap-2 mt-4 p-3">
                     <span>Essa observação te pertence!!</span>
                     <div class="d-flex gap-4">
-                        <a id="editar-achado-btn" href="" class="editar-btn">Editar Observação</a>
-                        <a href="" class="delete-btn">Excluir Observação</a>
+                        <a id="editar-achado-btn" class="editar-btn">Editar Observação</a>
+                        <a href="{{route('observacao.destroy', ['id' => $obs['id']])}}" class="delete-btn">Excluir Observação</a>
                     </div>
                 </div>
                 @endif
