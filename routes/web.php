@@ -30,6 +30,7 @@ Route::get('/auth', [AuthController::class, 'loginAuth'])->name('auth');
 Route::get('/auth/entrar', [AuthController::class, 'index'])->name('auth.entrar');
 Route::post('/auth/signup', [AuthController::class, 'store'])->name('auth.store');
 
+Route::get('/search', [ObservationController::class, 'search'])->name('search');
 
 Route::middleware([Authenticate::class])->group(function () {
 

@@ -20,7 +20,7 @@
 
         </div>
 
-        <input type="file" name="foto" id="foto-upload" class="color-black"/>
+        <input type="file" name="foto" id="foto-upload" class="color-black photo-uploader"/>
         
         <!-- Mapa Container -->
         <div id="edit-obs-editObsMap" style="height: 400px;" class=" w-75 mt-3 mb-3"></div>

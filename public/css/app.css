@@ -373,10 +373,25 @@ header a{
     padding: 0.5rem 1rem;
     border-radius: 1rem;
     transition: .3s;
+    cursor: pointer;
 }
 .editar-btn:hover{
     background-color: #a78432;
     color: #fff;
+}
+
+.validar-btn{
+    background-color: var(--light-green);
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    transition: .3s;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+.validar-btn:hover{
+    background-color: #34e752;
 }
 
 .delete-btn{
@@ -428,4 +443,13 @@ header a{
 }
 #publicar-denuncia.desactive{
     animation: slideDown 0.5s forwards;
+}
+
+.photo-uploader{
+    background-color: var(--light-white);
+    border-radius: 1rem;
+    width: 50%;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
