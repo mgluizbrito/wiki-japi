@@ -409,3 +409,23 @@ header a{
 #editar-achado.desactive{
     animation: slideDown 0.5s forwards;
 }
+
+#publicar-denuncia{
+    background-color: var(--light-white);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: max-content;
+    height: calc(100vh - 2rem * 2);
+    margin: 1.2rem;
+    width: calc(100% - 2rem * 2);
+    opacity: 0;
+    transition: .3s;
+}
+
+#publicar-denuncia.active{
+    animation: slideUp 0.5s forwards;
+}
+#publicar-denuncia.desactive{
+    animation: slideDown 0.5s forwards;
+}

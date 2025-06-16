@@ -8,7 +8,7 @@
     <div class="modal-links">
         <ul class="d-flex justify-content-between align-items-center" style="font-size: 24px;">
             <li id="publicar-achado-btn" class="cursor-pointer h-100 p-4">Publicar Observação 📷</a></li>
-            <li id="denuncia-btn" class="cursor-pointer h-100 p-4">Denúncia de Atropelamento 🚨</a></li>
+            <li id="publicar-denuncia-btn" class="cursor-pointer h-100 p-4">Denúncia de Atropelamento 🚨</a></li>
         </ul>
     </div>
 
