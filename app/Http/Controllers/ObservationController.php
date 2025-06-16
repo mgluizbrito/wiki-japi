@@ -68,6 +68,7 @@ class ObservationController extends Controller
         return view('Observation', [
             'obs' => $obs,
             'user' => $obs->user,
+            'iden' => null,
         ]);
     }
 
@@ -134,5 +135,23 @@ class ObservationController extends Controller
         });
 
         return redirect(route('portal'))->with('success', 'Observação excluída com sucesso!');
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('q');
+        $observations = Observation::where('desc', 'like', '%' . $query . '%')
+            ->orWhere('datetime', 'like', '%' . $query . '%')
+            ->orWhereHas('user', function ($q) use ($query) {
+                $q->where('name', 'like', '%' . $query . '%');
+            })
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        //dd($observations);
+        return view('PostsSearch', [
+            'observations' => $observations,
+            'query' => $query,
+        ]);
     }
 }

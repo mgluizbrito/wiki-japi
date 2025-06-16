@@ -3,9 +3,11 @@
     <x-portal_header />
 
     <section id="posts" style="margin-top: 80px;" class="container-fluid">
-        <div class="post-ops mb-4 pt-3">
-            <div class="filters">Filters</div>
-            <div class="orderby">Order</div>
+        <div class="post-ops mb-4 pt-3 d-flex justify-content-center">
+            <form action="{{route('search')}}" method="GET" class="d-flex w-25">
+                <input type="text" class="form-control" name="q" placeholder="Pesquise por nome, descrição ou usuário">
+                <button class="btn btn-success" type="submit" id="button-addon2"><img src="{{asset('assets/icon/search_24dp_FFFFFF.svg')}}"></button>
+            </form>
         </div>
 
         <div class="observations d-flex flex-wrap gap-4">

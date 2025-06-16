@@ -14,8 +14,10 @@
             <h3 class="mt-3" style="font-size: 2rem">O que vamos explorar hoje?</h3>
 
             <div class="search-field input-group input-group-lg mt-2 mb-3">
-                <input type="text" class="form-control" placeholder="Pesquise aqui">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2"><img src="{{asset('assets/icon/search_24dp_FFFFFF.svg')}}"></button>
+                <form action="{{route('search')}}" method="GET" class="d-flex">
+                    <input type="text" class="form-control" name="q" placeholder="Pesquise aqui">
+                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><img src="{{asset('assets/icon/search_24dp_FFFFFF.svg')}}"></button>
+                </form>
             </div>
         </div>
     </section>

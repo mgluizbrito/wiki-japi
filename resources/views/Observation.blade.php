@@ -5,7 +5,7 @@
         <div class="d-flex flex-wrap justify-content-center gap-5">
             <div>
                 <div class="obs-foto">
-                    <img src="/storage/{{$obs['photo_url']}}" alt="" style="max-width: 100%">
+                    <img src="/storage/{{$obs['photo_url']}}" alt="" style="max-width: 100%; max-height: 600px;">
     
                     <div class="d-none flex-column mt-4">
                         <span class="color-gray">Postagem por </span>
@@ -15,15 +15,21 @@
                     
                 </div>
                 
-                @if ($user['id'] == Auth::user()->id)
                 <div class="obs-actions flex-column gap-2 mt-4 p-3">
-                    <span>Essa observação te pertence!!</span>
-                    <div class="d-flex gap-4">
-                        <a id="editar-achado-btn" class="editar-btn">Editar Observação</a>
-                        <a href="{{route('observacao.destroy', ['id' => $obs['id']])}}" class="delete-btn">Excluir Observação</a>
+                    <div class="d-flex align-items-center flex-column gap-2">
+                        @if ($user['id'] == Auth::user()->id)
+                        <span>Essa observação te pertence!!</span>
+                        <div class="d-flex gap-4 ">
+                            <a id="editar-achado-btn" class="editar-btn">Editar Observação</a>
+                            <a href="{{route('observacao.destroy', ['id' => $obs['id']])}}" class="delete-btn">Excluir Observação</a>
+                        </div>
+                        @endif 
+                        
+                        @if ($user['role'] == 'specialist' && !$iden == null)
+                        <a id="validar-btn" class="validar-btn">Validar Identificação</a>
+                        @endif
                     </div>
                 </div>
-                @endif
             </div>
             <div class="obs-infos">
                 
